@@ -45,6 +45,27 @@ public class Main {
         //here strings are compared based on the content of the string and not based on the memory location like Object class, hence both the strings will be equal
         //the equals method of String class has overridden the equals method of java.lang.Object class to compare the content of the string and not the memory location
         System.out.println("Is both string equal: " + str1.equals(dataStr));
+
+        InheritanceExample ie=new InheritanceExample(12322);
+        //this method should have overrriden the default implementation of toString method written in java.lang.Object class;
+        System.out.println("String representation of this class: "+ie.toString());
+
+        InheritanceExample ieWithoutParams=new InheritanceExample();
+        System.out.println("String representation of this class: "+ieWithoutParams.toString());
+
+
+        //instanceof operator is used to check if object created is a instance of another object
+        //left side of the keyword should be the object instance and right side should be the class name
+        System.out.println("Is InheritanceExample instance of Object class: "+(ieWithoutParams instanceof Object));
+
+
+        Object objss = new Object();
+        //instanceof operator is used to check if object created is a instance of another object
+        //below code returns true because instanceof operator has less precedence compared to + symbol, in println we have added + which has concatenated the string written in double quotes and objss so combination of these result in a string
+        //so since the result is of type string, it would be like string instanceof String
+        //so add paranthesis to give preferences to operators inside brackets to solve issue 
+        System.out.println("Is Object instance of String class without brackets: "+ objss instanceof String);
+        System.out.println("Is Object instance of String class: "+ (objss instanceof String));
     }
 
 }
