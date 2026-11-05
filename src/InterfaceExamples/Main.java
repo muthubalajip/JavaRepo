@@ -29,7 +29,7 @@ public class Main {
 
         //derived or child class instance of ComputerSpecifications interface
 
-        Dell gl=new Dell(64,512_000_000_000L);
+        Dell gl=new Dell("Dell XPS 512",64,512_000_000_000L,"RTX Spark");
 
         
         System.out.println(gl.addRam());
@@ -42,12 +42,23 @@ public class Main {
 
         System.out.println("Is copilot included? "+gl.isLlmIncluded());
 
-        GamingLaptop gld=new Dell(64,512_000_000_000L);
+        GamingLaptop gld=new Dell("Dell Inspiron 500",64,512_000_000_000L,"RTX 4050");
         
         //error: The final field ComputerSpecifications.inbuiltLm cannot be assigned
         //gld.inbuiltLm="Copilot not included";
 
         System.out.println("Is llm included: "+GamingLaptop.inbuiltLm);
+
+        
+        Macbook mb=new Macbook("Macbook Air M4",24,512_000_000_000L,true);
+        //since macbook implements ProfessionalLaptop which is a derived class of ComputerSpecifications, below code would return true
+        System.out.println("mb Instance of GamingLaptop interface? "+(mb instanceof ComputerSpecifications));
+        //though GamingLaptop implements ComputerSpecifications, mb is not a instance of it because ProfessionalLaptop is the one which is implemented by Macbook class
+        //both ProfessionalLaptop and GamingLaptop are independent Interfaces with their own method signatures to implement
+        System.out.println("mb Instance of GamingLaptop interface? "+(mb instanceof GamingLaptop));
+
+
+
 
 
     }

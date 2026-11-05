@@ -4,15 +4,20 @@ public class Dell implements GamingLaptop{
 
     private Integer ramToAdd;
     private Long addSsdSize;
+    private String graphicsCardName;
+    private String modelName;
 
-    public Dell(Integer ramToAdd,Long addSsdSize){
+    public Dell(String modelName,Integer ramToAdd,Long addSsdSize, String graphicsCardName){
+        this.modelName=modelName;
         this.ramToAdd=ramToAdd;
         this.addSsdSize=addSsdSize;
+        this.graphicsCardName=graphicsCardName;
+
     }
 
     @Override
     public String addRam() {
-        return "Adding "+ ramToAdd +"GB ram to the Computer";
+        return "Adding "+ ramToAdd +"GB ram to the model "+modelName;
     }
 
     @Override
@@ -29,6 +34,11 @@ public class Dell implements GamingLaptop{
         return inbuiltLm;
     }
 
+
+    @Override
+    public String graphicsCardUsed(){
+        return "For this laptop "+graphicsCardName+" is used";
+    }
     
 
 }
