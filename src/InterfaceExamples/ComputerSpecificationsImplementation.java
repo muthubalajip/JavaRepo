@@ -7,10 +7,12 @@ public class ComputerSpecificationsImplementation implements ComputerSpecificati
 
     private Integer ramToAdd;
     private Long addSsdSize;
+    private String getOsName;
 
-    public ComputerSpecificationsImplementation(Integer ramToAdd,Long addSsdSize){
+    public ComputerSpecificationsImplementation(Integer ramToAdd,Long addSsdSize,String getOsName){
         this.ramToAdd=ramToAdd;
         this.addSsdSize=addSsdSize;
+        this.getOsName=getOsName;
     }
 
     @Override
@@ -26,6 +28,11 @@ public class ComputerSpecificationsImplementation implements ComputerSpecificati
     @Override
     public String runAntiVirusSoftware() {
         return "Running Antivirus Software";
+    }
+
+    @Override
+    public String osName() {
+        return "Laptop is running on "+getOsName;
     }
 
     

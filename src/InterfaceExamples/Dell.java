@@ -39,6 +39,12 @@ public class Dell implements GamingLaptop{
     public String graphicsCardUsed(){
         return "For this laptop "+graphicsCardName+" is used";
     }
+
+    @Override
+    public String osName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'osName'");
+    }
     
 
 }
